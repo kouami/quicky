@@ -18,7 +18,7 @@ public class HomeController {
 	@Autowired
 	private BookService bookService;
 	
-	@RequestMapping(value={"/","/index"})
+	@RequestMapping(value={"/index"})
 	public String home(){
 		return "index";
 	}
