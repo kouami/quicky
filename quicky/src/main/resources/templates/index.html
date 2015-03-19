@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
- <head>
-  <meta charset="ISO-8859-1" />
-  <title>Insert title here</title>
- </head>
+<head>
+<meta charset="ISO-8859-1" />
+<title>Insert title here</title>
+</head>
 <body>
- this is the index page...
+	this is the index page...
+
+	<form method="POST" enctype="multipart/form-data" action="/upload">
+		File to upload: <input type="file" name="file"/><br /> 
+		Name: <input type="text" name="name"/><br /> <br /> 
+		<input type="submit" value="Upload"/> Press here to upload the file!
+		<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+	</form>
 </body>
 </html>
