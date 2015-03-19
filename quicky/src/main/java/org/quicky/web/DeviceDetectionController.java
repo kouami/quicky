@@ -1,6 +1,7 @@
 package org.quicky.web;
 
 import org.springframework.mobile.device.Device;
+import org.springframework.mobile.device.site.SitePreference;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -19,6 +20,15 @@ public class DeviceDetectionController {
             deviceType = "tablet";
         }
         return "Hello " + deviceType + " browser!";
+    }
+	
+	@RequestMapping("/site-preference")
+    public @ResponseBody String home(SitePreference sitePreference) {
+        if (sitePreference != null) {
+            return "Hello " + sitePreference.name() + " site preference!";
+        } else {
+            return "SitePreference is not configured.";
+        }
     }
 	
 }

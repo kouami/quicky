@@ -1,6 +1,9 @@
 package org.quicky.common;
 
 public class CronExpressionFactory {
+	
+	//http://www.cronmaker.com/
+	
 	/*
 	*   *    *    *    *    *   (year optional)
 	┬   ┬    ┬    ┬    ┬    ┬
@@ -15,8 +18,8 @@ public class CronExpressionFactory {
 	*/
 	public static final String TOP_OF_EVERY_HOUR_OF_EVERY_DAY = "0 0 * * * *";
 	public static final String EVERY_TEN_SECONDS = "*/10 * * * * *";
-	public static final String EVERY_MINUTE = "1 * * * * *";
-	public static final String EVERY_FIVE_MINUTES = "* 5 * * * *";
-	public static final String EVERY_TEN_MINUTES = "* 10 * * * *";
+	public static final String EVERY_MINUTE = "0 0/1 * 1/1 * ?";
+	public static final String EVERY_FIVE_MINUTES = "0 0/5 * 1/1 * ?";
+	public static final String EVERY_TEN_MINUTES = "0 0/10 * 1/1 * ?";
 	
 }
