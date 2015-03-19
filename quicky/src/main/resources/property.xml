@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<property-list name="PCRCPPropLkup">
+	<context environment="DEV">
+		<property-hash name="english">
+			<item key="1">one</item>
+			<item key="2">two</item>
+			<item key="3">three</item>
+		</property-hash>
+		<property-hash name="spanish">
+			<item key="1">uno</item>
+			<item key="two">dos</item>
+			<item key="three">tres</item>
+		</property-hash>
+	</context>
+	<context instance="IT">
+		<property-hash name="french">
+			<item key="1">un</item>
+			<item key="2">deux</item>
+			<item key="3">troi</item>
+		</property-hash>
+		<property-hash name="spanish">
+			<item key="one">uno</item>
+			<item key="two">dos</item>
+			<item key="three">tres</item>
+		</property-hash>
+	</context>
+</property-list>
