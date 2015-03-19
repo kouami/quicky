@@ -24,8 +24,9 @@ import org.productivity.java.habitat4j.common.exception.PropertyListHandlerExcep
  * @author Emmanuel
  */
 public class Habitat4jBootstrap {
-    
-    
+    // google search --> "extending PropertyPlaceholderConfigurer"
+    //result --> http://robertmaldon.blogspot.com/2007/06/extending-spring-propertyplaceholdercon.html
+	
     private static final String SERVER_IDENTITY_FILE = "/server-identity.xml";
     public static final String DEFAULT_FILE_SEPARATOR = "/";
     public static final String BOOTSTRAP_APP_NAME = "PCRCP";
