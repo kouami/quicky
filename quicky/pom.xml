@@ -153,6 +153,11 @@
 			<artifactId>habitat4j</artifactId>
 			<version>1.0.0rc19</version>
 		</dependency>
+		<dependency>
+		  <groupId>com.dhtmlx.planner.java</groupId>
+		  <artifactId>javaplanner</artifactId>
+		  <version>1.5</version>
+		</dependency>
 	</dependencies>
 
 	<build>
