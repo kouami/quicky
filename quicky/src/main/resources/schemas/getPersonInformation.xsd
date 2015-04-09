@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2012 sp1 (http://www.altova.com) by u329022 (Wells Fargo Bank N.A.) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:complexType name="Person_Type">
+		<xs:annotation>
+			<xs:documentation>
+	    Put the documentation for this complex type here...
+	  </xs:documentation>
+		</xs:annotation>
+		<xs:all>
+			<xs:element ref="firstName"/>
+			<xs:element ref="middleName"/>
+			<xs:element ref="lastName"/>
+			<xs:element ref="ssn"/>
+			<xs:element ref="gender"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="BankAccount_Type">
+		<xs:annotation>
+			<xs:documentation>
+	    Put the documentation for this complex type here...
+	  </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="accountNumber"/>
+			<xs:element ref="accountType"/>
+			<xs:element ref="dateOpened"/>
+			<xs:element ref="accountBalance"/>
+			<xs:element ref="accountDetails"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SearchCriteria_Type">
+		<xs:annotation>
+			<xs:documentation>
+	    Put the documentation for this complex type here...
+	  </xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element ref="firstName" minOccurs="0"/>
+			<xs:element ref="lastName" minOccurs="0"/>
+			<xs:element ref="ssn" minOccurs="0"/>
+			<xs:element ref="accountNumber" minOccurs="0"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="getPersonInformationRequest_Type">
+		<xs:annotation>
+			<xs:documentation>
+	    Put the documentation for this complex type here...
+	  </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="searchCriteria" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="getPersonInformationResponse_Type">
+		<xs:annotation>
+			<xs:documentation>
+	    Put the documentation for this complex type here...
+	  </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="info"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="getPersonInformationOutput_Type">
+		<xs:annotation>
+			<xs:documentation>
+	    Put the documentation for this complex type here...
+	  </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="person"/>
+			<xs:element ref="account" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="info" type="getPersonInformationOutput_Type"/>
+	<xs:element name="accountNumber" type="xs:string"/>
+	<xs:element name="accountType" type="xs:string"/>
+	<xs:element name="dateOpened" type="xs:date"/>
+	<xs:element name="accountBalance" type="xs:decimal"/>
+	<xs:element name="accountDetails" type="xs:string"/>
+	<xs:element name="searchCriteria" type="SearchCriteria_Type"/>
+	<xs:element name="firstName" type="xs:string"/>
+	<xs:element name="middleName" type="xs:string"/>
+	<xs:element name="lastName" type="xs:string"/>
+	<xs:element name="ssn" type="xs:string"/>
+	<xs:element name="gender" type="xs:string"/>
+	<xs:element name="person" type="Person_Type"/>
+	<xs:element name="account" type="BankAccount_Type"/>
+	<!-- ///////////////////////////////////////////////////////////////////////////// -->
+	<!-- ////////      Get Person Information Request       ////////  -->
+	<!-- //////////////////////////////////////////////////////////////////////////  -->
+	<xs:element name="getPersonInformationRequest" type="getPersonInformationRequest_Type"/>
+	<!-- ///////////////////////////////////////////////////////////////////////////// -->
+	<!-- ////////      Get Person Information Response      ///////  -->
+	<!-- ///////////////////////////////////////////////////////////////////////////  -->
+	<xs:element name="getPersonInformationResponse" type="getPersonInformationResponse_Type"/>
+</xs:schema>
