@@ -2,6 +2,7 @@ package org.quicky.dao;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.quicky.model.Event;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.dhtmlx.planner.DHXEv;
@@ -19,8 +20,8 @@ public class EventCalendarDaoImpl implements EventCalendarDao {
 	
 	@SuppressWarnings("unchecked")
 	@Override
-	public Iterable<DHXEv> getEvents() {
-		return getSession().createQuery("from DHXEv").list();
+	public Iterable<Event> getEvents() {
+		return getSession().createQuery("from Event").list();
 	}
 
 	@Override

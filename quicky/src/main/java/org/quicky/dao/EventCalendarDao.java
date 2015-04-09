@@ -1,5 +1,7 @@
 package org.quicky.dao;
 
+import org.quicky.model.Event;
+
 import com.dhtmlx.planner.DHXEv;
 import com.dhtmlx.planner.DHXStatus;
 
@@ -9,7 +11,7 @@ public interface EventCalendarDao {
 	//http://javaplanner.com/docs/loading_data.html
 	//http://javaplanner.com/docs/managing_crud_operations.html
 	
-	public Iterable<DHXEv> getEvents();
+	public Iterable<Event> getEvents();
 	public DHXStatus saveEvent(DHXEv event, DHXStatus status);
 	public DHXEv  createEvent(String id, DHXStatus status);
 	
